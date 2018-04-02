@@ -32,7 +32,7 @@ router.post('/invite', function(req, res) {
           if (body.ok) {
             res.render('result', {
               community: config.community,
-              message: 'Success! Check &ldquo;'+ req.body.email +'&rdquo; for an invite from Slack.'
+              message: 'Success! Check '+ req.body.email +' for an invite from Slack!'
             });
           } else {
             let error = body.error;
@@ -46,7 +46,7 @@ router.post('/invite', function(req, res) {
             } else if (error === 'invalid_email') {
               error = 'The email you entered is an invalid email.';
             } else if (error === 'invalid_auth') {
-              error = 'Something has gone wrong. Please contact a system administrator.';
+              error = 'Ohs nos! We couldn&rsquo;t add you. Please contact one of the GDI ATX chapter leaders.';
             }
 
             res.render('result', {
